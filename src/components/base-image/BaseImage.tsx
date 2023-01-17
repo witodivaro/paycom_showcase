@@ -17,9 +17,16 @@ const BaseImage = ({
   className = '',
   onClick = () => {},
 }: BaseImageProps) => {
-  // todo: implement BaseImage component
-
-  return null
+  return (
+    <img
+      src={src}
+      alt={alt}
+      title={title}
+      className={className}
+      width={width}
+      height={height}
+    />
+  );
 };
 
 export default BaseImage;

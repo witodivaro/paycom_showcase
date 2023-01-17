@@ -55,6 +55,10 @@ function Album({ album, user }: AlbumProps) {
     setLocalImages(localImages.filter((image) => image.id !== imageId));
   };
 
+  const handleClick = () => {
+    setIsOpen((isPrevOpen) => !isPrevOpen);
+  }
+
   return (
     <div
       className="rounded-lg shadow-md py-6 px-5  bg-gray-100 flex flex-col"
@@ -62,6 +66,7 @@ function Album({ album, user }: AlbumProps) {
       onMouseLeave={handleMouseLeave}
     >
       <div className="flex flex-row items-center">
+        <span className="album-id">#{album.id}</span>
         <div className="album-title-author box-border overflow-hidden grow">
           <h2
             className="text-md font-black tracking-wide truncate uppercase"
@@ -69,6 +74,7 @@ function Album({ album, user }: AlbumProps) {
           >
             {album.title}
           </h2>
+          <p className="w-full text-sm">{authorString}</p>
         </div>
         <ToggleArrow
           onClick={handleClick}
